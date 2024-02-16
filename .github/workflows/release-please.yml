@@ -30,7 +30,7 @@ jobs:
     needs: release-please
     if: ${{ needs.release-please.outputs.releases_created == 'true' }}
     container:
-      image: fedora:39
+      image: fedora:40
       options: --privileged
     permissions:
       contents: write
@@ -42,7 +42,7 @@ jobs:
         with:
           image-name: bazzite
           installer-repo: releases
-          installer-major-version: 39
+          installer-major-version: 40
           boot-menu-path: boot_menu.yml
       - name: install github CLI
         run: |

@@ -1,7 +1,5 @@
 name: Build Bazzite
 on:
-  schedule:
-    - cron: '40 16 * * 2,5' # 16:40 utc tues thurs
   pull_request:
     branches:
       - main
@@ -46,12 +44,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        base_image_flavor: [main, asus, framework, surface]
-        base_name: [bazzite, bazzite-deck, bazzite-nvidia]
+        base_image_flavor: [main]
+        base_name: [bazzite-nvidia]
         base_image_name: [kinoite, silverblue]
-        major_version: [39]
+        major_version: [40]
         include:
-          - major_version: 39
+          - major_version: 40
             is_latest_version: true
             is_stable_version: true
         exclude:
