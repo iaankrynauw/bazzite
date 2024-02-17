@@ -2,7 +2,6 @@ name: Build Bazzite
 on:
   pull_request:
     branches:
-      - main
       - testing
       - unstable
     paths-ignore:
@@ -14,7 +13,6 @@ on:
       - 'press_kit/**'
   push:
     branches:
-      - main
       - testing
       - unstable
     paths-ignore:
